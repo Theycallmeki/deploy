@@ -116,7 +116,7 @@ USE_TZ = True
 STATIC_URL = '/static/'  # Add a leading slash to STATIC_URL
 STATIC_ROOT = BASE_DIR / 'staticfiles' / 'asssets' # Directory where collectstatic will collect files
 STATICFILES_DIRS = [BASE_DIR / 'myApp' / 'static']  # Adjusted to use Path
-STATICFILES_STORAGE ="whitenoise.storage.CompressManifestStaticfilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (uploaded files)
 MEDIA_URL = '/media/'
