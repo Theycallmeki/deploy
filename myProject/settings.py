@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'myProject.urls'
@@ -113,8 +114,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'  # Add a leading slash to STATIC_URL
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory where collectstatic will collect files
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'asssets' # Directory where collectstatic will collect files
 STATICFILES_DIRS = [BASE_DIR / 'myApp' / 'static']  # Adjusted to use Path
+STATICFILES_STORAGE ="whitenoise.storage.CompressManifestStaticfilesStorage"
 
 # Media files (uploaded files)
 MEDIA_URL = '/media/'
